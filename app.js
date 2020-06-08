@@ -17,9 +17,9 @@ var commentRoutes = require("./routes/comments"),
 
 // mongoose.connect("mongodb://localhost/yelp_camp");
 mongoose.connect("mongodb+srv://sourav:sourav132907@cluster0-9wojo.mongodb.net/<dbname>?retryWrites=true&w=majority",{
-	useNewParser: true,
+	useNewUrlParser: true,
 	useCreateIndex: true
-}),then(()=>{
+}).then(()=>{
 	console.log("connected to DB!")
 }).catch(err => {
 	console.log("Error",err.message);

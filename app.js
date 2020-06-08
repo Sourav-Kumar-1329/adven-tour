@@ -16,7 +16,14 @@ var commentRoutes = require("./routes/comments"),
 	indexRoutes = require("./routes/index")
 
 // mongoose.connect("mongodb://localhost/yelp_camp");
-mongoose.connect("mongodb+srv://sourav:sourav132907@cluster0-9wojo.mongodb.net/<dbname>?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://sourav:sourav132907@cluster0-9wojo.mongodb.net/<dbname>?retryWrites=true&w=majority",{
+	useNewParser: true,
+	useCreateIndex: true
+}),then(()=>{
+	console.log("connected to DB!")
+}).catch(err => {
+	console.log("Error",err.message);
+});
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");

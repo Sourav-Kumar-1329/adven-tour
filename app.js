@@ -56,7 +56,7 @@ app.use(indexRoutes);
 app.use(commentRoutes);
 app.use(campgroundRoutes);
 
-
-app.listen(3000,function(){
+var x = PROCESS.ENV.IP || 3000 ;
+app.listen(x,function(){
 	console.log ("Server Has Started!!");
 });
